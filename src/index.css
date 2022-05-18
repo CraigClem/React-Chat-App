@@ -5,6 +5,12 @@
   font-size: 10px;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100vh;
+}
+
 /* img {
   border-radius: 50%;
   height: 2.5rem;
@@ -24,4 +30,11 @@ Send {
 
 .chat-items {
   display: flex;
+}
+
+.sign-in-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

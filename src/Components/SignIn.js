@@ -34,7 +34,7 @@ function SignIn() {
 
   return (
 
-    <div >
+    <div className='sign-in-container'>
       <Button variant='contained' size='medium' onClick={signInWithGoogle}>Sign In With Google</Button>
     </div >
   )
