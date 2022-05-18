@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase';
-import { onSnapshot, collection, orderBy } from "firebase/firestore";
+import { onSnapshot, collection } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 import SignOut from './SignOut';
