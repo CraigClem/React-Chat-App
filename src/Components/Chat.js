@@ -10,6 +10,8 @@ import Avatar from '@mui/material/Avatar';
 function Chat() {
 
   const [messages, setMessages] = useState([])
+  const time = messages.map(msg => new Date(msg.createdAt.toDate().toString()))
+  console.log(time)
 
   useEffect(() => {
     onSnapshot(collection(db, 'messages'), (snapShot) => {
@@ -24,13 +26,14 @@ function Chat() {
       </div>
       <div className='chat--container'>
         <br />
-        {messages.map(({ id, text, createdAt, author, photoURL }) =>
+        {messages.map(({ id, text, createdAt, author, photoURL, time }) =>
           <div
             key={id}
             className='chat-items'>
             <div className='chat-img'>
               <Avatar src={photoURL} alt='user profile' />
-              <p>{createdAt ? createdAt.toString() : 'time'}</p>
+              <p>
+                {createdAt ? createdAt.seconds : ''}</p>
             </div>
             <div className='chat-text'>
               <p>{text}</p>
