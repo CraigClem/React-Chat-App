@@ -4,6 +4,7 @@ import { auth, provider } from '../firebase.js';
 import Button from '@mui/material/Button';
 
 
+
 function SignIn() {
 
   const signInWithGoogle = async () => {
@@ -21,21 +22,18 @@ function SignIn() {
       })
       .catch((error) => {
         console.log(error, error.code, error.message)
-        // Handle Errors here.
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        // // The email of the user's account used.
-        // const email = error.email;
-        // // The AuthCredential type that was used.
-        // const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
       });
   };
 
   return (
 
     <div className='sign-in-container'>
-      <Button variant='contained' size='medium' onClick={signInWithGoogle}>Sign In With Google</Button>
+      <Button
+        variant='contained'
+        size='medium'
+        onClick={signInWithGoogle}>
+        Sign In With Google
+      </Button>
     </div >
   )
 }

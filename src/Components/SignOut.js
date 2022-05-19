@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 
 function SignOut() {
   return (
-    <div>
+    <div className="sign-out-btn--container">
       <Button variant='contained' onClick={() => auth.signOut()}>Sign Out</Button>
     </div>
   )

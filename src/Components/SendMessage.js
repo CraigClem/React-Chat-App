@@ -25,12 +25,6 @@ function SendMessage() {
 
   return (
     <div className="message--container">
-      <Button type='submit'
-        variant="contained"
-        onClick={sendMsg}
-        endIcon={<SendIcon />}>
-        SEND
-      </Button>
       <Box
         component="form"
         sx={{
@@ -51,6 +45,12 @@ function SendMessage() {
           value={msg}
           onChange={(e) => setMsg(e.target.value)} />
       </Box>
+      <Button type='submit'
+        variant="contained"
+        onClick={sendMsg}
+        endIcon={<SendIcon />}>
+        SEND
+      </Button>
     </div>
   )
 }

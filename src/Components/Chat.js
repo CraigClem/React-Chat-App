@@ -22,23 +22,27 @@ function Chat() {
 
 
   return (
-    <div className='chat--container'>
-      <SignOut />
-      <br />
-      {messages.map(({ id, text }) =>
-        <div
-          key={id}
-          className='chat-items'>
-          <div class='chat-img'>
-            <Avatar src={`${user.photoURL}`} alt='user profile' />
-            <p>{user.displayName}</p>
+    <div className='chat--body'>
+      <div className="sign--out--container">
+        <SignOut />
+      </div>
+      <div className='chat--container'>
+        <br />
+        {messages.map(({ id, text }) =>
+          <div
+            key={id}
+            className='chat-items'>
+            <div class='chat-img'>
+              <Avatar src={`${user.photoURL}`} alt='user profile' />
+              <p>{user.displayName}</p>
+            </div>
+            <div className='chat-text'>
+              <p>{text}</p>
+            </div>
           </div>
-          <div className='chat-text'>
-            <p>{text}</p>
-          </div>
-        </div>
-      )}
-      <SendMessage />
+        )}
+        <SendMessage />
+      </div>
     </div>
 
   )
