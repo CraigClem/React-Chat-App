@@ -13,6 +13,7 @@ function Chat() {
   const auth = getAuth();
   const user = auth.currentUser;
   console.log(user)
+  console.log(messages)
 
   useEffect(() => {
     onSnapshot(collection(db, 'messages'), (snapShot) => {
@@ -28,13 +29,13 @@ function Chat() {
       </div>
       <div className='chat--container'>
         <br />
-        {messages.map(({ id, text }) =>
+        {messages.map(({ id, text, photoURL }) =>
           <div
             key={id}
             className='chat-items'>
             <div class='chat-img'>
               <Avatar src={`${user.photoURL}`} alt='user profile' />
-              <p>{user.displayName}</p>
+              <p>{ }</p>
             </div>
             <div className='chat-text'>
               <p>{text}</p>

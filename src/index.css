@@ -17,12 +17,9 @@ Send {
   height: 1.5rem;
 }
 
-/* .main--container {
-  background-image: url("/src/Images/1652950396004.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-} */
+.main--container {
+  background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+}
 
 .chat--container {
   width: 100%;
@@ -68,6 +65,8 @@ Send {
 .message--container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
 }
 
 .sign-out-btn--container {

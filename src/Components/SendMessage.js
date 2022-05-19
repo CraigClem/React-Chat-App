@@ -6,7 +6,7 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+import OutlinedInput from '@mui/material/OutlinedInput';
 
 
 
@@ -34,22 +34,42 @@ function SendMessage() {
         noValidate
         autoComplete="off"
       >
-        <TextField
+        <OutlinedInput
           id="standard-basic"
           placeholder="message..."
           variant="standard"
           sx={{
-            border: '1px solid white',
-            color: '#FFFFFF'
+            border: 'none',
+            borderRadius: '12px',
+            backgroundColor: 'white',
+            color: 'black',
+            width: '500px',
+
           }}
           value={msg}
           onChange={(e) => setMsg(e.target.value)} />
       </Box>
-      <Button type='submit'
+      <Button
+        type='submit'
         variant="contained"
         onClick={sendMsg}
-        endIcon={<SendIcon />}>
-        SEND
+        endIcon={<SendIcon
+          sx={{
+            display: 'flex',
+            marginLeft: '-7px',
+            padding: '0',
+          }}
+        />}
+        sx={{
+          border: 'none',
+          color: 'white',
+          display: 'flex',
+          justifyContent: 'center',
+          padding: '0.25rem',
+          marginRight: '1rem',
+          height: '70%',
+          width: '50px',
+        }}>
       </Button>
     </div>
   )
