@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 function SignIn() {
 
   const signInWithGoogle = async () => {
+
     provider.setCustomParameters({ prompt: 'select_account' });
     signInWithPopup(auth, provider)
       .then((result) => {

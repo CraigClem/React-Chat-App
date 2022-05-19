@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { db } from '../firebase';
+import { db, auth } from '../firebase';
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+
 
 
 import Button from '@mui/material/Button';
@@ -9,16 +10,18 @@ import Box from '@mui/material/Box';
 import OutlinedInput from '@mui/material/OutlinedInput';
 
 
-
 function SendMessage() {
 
   const [msg, setMsg] = useState('')
+
 
   const sendMsg = async (e) => {
     e.preventDefault()
     addDoc(collection(db, 'messages'), {
       text: msg,
-      createdAt: serverTimestamp()
+      createdAt: serverTimestamp(),
+      author: `${auth.currentUser.displayName}`,
+      photoURL: `${auth.currentUser.photoURL}`
     })
     setMsg('')
   }
