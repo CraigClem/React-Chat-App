@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 
 
 
+
 function SignIn() {
 
   const signInWithGoogle = async () => {
@@ -27,15 +28,17 @@ function SignIn() {
   };
 
   return (
+    <>
 
-    <div className='sign-in-container'>
-      <Button
-        variant='contained'
-        size='medium'
-        onClick={signInWithGoogle}>
-        Sign In With Google
-      </Button>
-    </div >
+      <div className='sign-in-container'>
+        <Button
+          variant='contained'
+          size='medium'
+          onClick={signInWithGoogle}>
+          Sign In With Google
+        </Button>
+      </div >
+    </>
   )
 }
 
